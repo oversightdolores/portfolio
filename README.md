@@ -1,6 +1,6 @@
 # Portfolio
 
-This project aims to showcase a personal portfolio website. It is built with [Next.js](https://nextjs.org/) and uses Node.js for package management.
+This project showcases a personal portfolio website with a clean, professional design. It is built with [Next.js](https://nextjs.org/) and uses Node.js for package management.
 
 ## Getting Started
 
@@ -15,10 +15,10 @@ npm run dev
 
 The project source code typically resides in the following directories:
 
-- `pages/` – application routes and pages
-- `components/` – reusable UI components
+- `app/` – routes built with the Next.js App Router
+- `src/components/` – reusable UI components
 - `public/` – static assets such as images and fonts
-- `styles/` – global and component-level styling
+- `src/lib/` – data used across pages
 
 Additional build outputs are ignored by Git as configured in `.gitignore`.
 
