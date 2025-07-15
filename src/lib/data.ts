@@ -1,6 +1,6 @@
 export const profile = {
-  name: 'Your Name',
-  role: 'Your Role',
+  name: 'Lo giudice Nicolas',
+  role: 'Full Stack Developer',
   bio: 'A short bio about yourself. Replace this with your real bio.',
 }
 

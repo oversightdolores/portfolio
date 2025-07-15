@@ -18,6 +18,7 @@ export default function ThemeToggle() {
   if (!mounted) return null
 
   const toggle = () => {
+    console.log('toggle', toggle)
     const isDark = document.documentElement.classList.toggle('dark')
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }
@@ -25,7 +26,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      className="fixed bottom-4 right-4 p-2 bg-white/30 dark:bg-gray-800/30 backdrop-blur-md rounded-full"
+      className="fixed bottom-20 right-4 p-2 bg-white/30 dark:bg-gray-800/30 backdrop-blur-md rounded-full"
       aria-label="Toggle Theme"
     >
       🌗
