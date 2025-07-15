@@ -2,9 +2,9 @@ import { projects } from '@/lib/data'
 
 export default function ProjectsPage() {
   return (
-    <section className="space-y-4 p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-xl">
-      <h2 className="text-3xl font-semibold">Projects</h2>
-      <ul className="list-disc pl-4">
+    <section className="space-y-6 py-10">
+      <h2 className="text-4xl font-bold mb-4">Projects</h2>
+      <ul className="list-disc pl-5 space-y-2">
         {projects.map((p) => (
           <li key={p.title} className="mb-2">
             <strong>{p.title}:</strong> {p.description}
