@@ -3,6 +3,8 @@ import { profile } from '@/lib/data'
 export default function HomePage() {
   return (
     <section className="flex flex-col items-center justify-center gap-6 text-center py-20">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/profile.svg" alt={profile.name} className="w-40 h-40 rounded-full border border-gray-300 dark:border-gray-700" />
       <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
         Hi, I'm {profile.name}
       </h1>
