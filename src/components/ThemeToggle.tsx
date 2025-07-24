@@ -14,12 +14,12 @@ export default function ThemeToggle() {
       document.documentElement.classList.add('dark')
     }
   }, [])
-
+  
   if (!mounted) return null
-
+  
   const toggle = () => {
-    console.log('toggle', toggle)
     const isDark = document.documentElement.classList.toggle('dark')
+    console.log('toggle', isDark)
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }
 

@@ -1,15 +1,43 @@
-import { profile } from '@/lib/data'
+'use client'
 
-export default function HomePage() {
+import Image from 'next/image'
+import Projects from './projects/page'
+import Technologies from './technologies/page'
+import Contacto from './contact/page'
+import About from './about/page'
+import Home from './home/page'
+
+export default function App() {
   return (
-    <section className="flex flex-col items-center justify-center gap-6 text-center py-20">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/profile.svg" alt={profile.name} className="w-40 h-40 rounded-full border border-gray-300 dark:border-gray-700" />
-      <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-        Hi, I'm {profile.name}
-      </h1>
-      <p className="text-2xl text-gray-700 dark:text-gray-300">{profile.role}</p>
-      <p className="max-w-prose text-lg text-gray-600 dark:text-gray-400">{profile.bio}</p>
-    </section>
+    <main className="bg-[var(--background-color)] text-[var(--text-primary)] scroll-smooth">
+      {/* Hero Section */}
+      <section id="inicio" className="min-h-screen flex flex-col justify-center items-center text-center px-6 py-24">
+       <Home />
+      </section>
+
+      {/* Sobre Mí */}
+      <section id="sobre-mi" className="flex flex-col md:flex-row gap-10 px-6 py-20 items-center text-blue-500 dark:text-gray-100 max-w-6xl mx-auto">
+        <div className="flex-1">
+         <About />
+        </div>
+       
+      </section>
+
+      {/* Proyectos */}
+      <section id="proyectos" className="px-6 py-20 bg-[var(--accent-color)]">
+        
+        <Projects/>
+      </section>
+
+      {/* Stack & Herramientas */}
+      <section id="stack" className="px-6 py-20">
+        <Technologies />
+      </section>
+
+      {/* Contacto (opcional) */}
+      <section id="contacto" className="px-6 py-20 bg-[var(--accent-color)] text-center">
+        <Contacto />
+      </section>
+    </main>
   )
 }

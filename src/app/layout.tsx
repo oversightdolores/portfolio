@@ -1,23 +1,24 @@
+// 3. src/app/layout.tsx
 import './globals.css'
-import ThemeToggle from '@/components/ThemeToggle'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import type { Metadata } from 'next'
-import { ReactNode } from 'react'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import ThemeToggle from '../components/ThemeToggle'
 
-export const metadata: Metadata = {
-  title: 'Portfolio',
-  description: 'Personal portfolio site',
+export const metadata = {
+  title: 'Nicolás Lo Giudice - Portfolio',
+  description: 'Desarrollador Full Stack y mobile',
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+    <html lang="es">
+      <body className="bg-[var(--background-color)] text-[var(--primary-text-color)] font-sans">
+        <div className="relative flex min-h-screen flex-col overflow-x-hidden">
         <ThemeToggle />
-        <Navbar />
-        <main className="container mx-auto flex-1 p-4">{children}</main>
-        <Footer />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   )

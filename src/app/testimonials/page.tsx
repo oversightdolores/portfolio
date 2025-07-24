@@ -1,4 +1,4 @@
-import { testimonials } from '@/lib/data'
+import { testimonials } from '../../lib/data'
 
 export default function TestimonialsPage() {
   return (
