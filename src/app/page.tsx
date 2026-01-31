@@ -5,7 +5,6 @@ import HeroSection from '@/components/sections/HeroSection'
 import ProjectsSection from '@/components/sections/ProjectsSection'
 import ServicesSection from '@/components/sections/ServicesSection'
 import StackSection from '@/components/sections/StackSection'
-import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export default function HomePage() {
   return (
@@ -16,7 +15,6 @@ export default function HomePage() {
       <StackSection />
       <ExperienceSection />
       <ServicesSection />
-      {/* <TestimonialsSection /> */}
       <ContactSection />
     </main>
   )

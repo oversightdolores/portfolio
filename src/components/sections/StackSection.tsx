@@ -25,7 +25,7 @@ export default function StackSection() {
                   />
                 ) : (
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[10px] font-semibold text-[var(--text-primary)]">
-                    {(tech.short ?? tech.name.slice(0, 2)).toUpperCase()}
+                    {tech.name.slice(0, 2).toUpperCase()}
                   </div>
                 )}
                 <span>{tech.name}</span>
