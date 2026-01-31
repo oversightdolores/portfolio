@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-20 flex w-full items-center justify-between border-b border-[var(--border-color)] bg-[var(--background-color)]/80 px-6 py-4 backdrop-blur-sm md:px-10">
-      <Link href={withBasePath('/#inicio')} className="flex items-center gap-3">
+      <Link href="/#inicio" className="flex items-center gap-3">
         <img
           src={withBasePath('/logos/icon.svg')}
           alt="Logo NL"
@@ -50,7 +50,7 @@ export default function Header() {
         {navItems.map((item) => (
           <Link
             key={item.label}
-            href={withBasePath(item.href)}
+            href={item.href}
             className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--primary-color)]"
           >
             {item.label}
@@ -59,7 +59,7 @@ export default function Header() {
       </nav>
 
       <Link
-        href={withBasePath('/cv.pdf')}
+        href="/cv.pdf"
         className="hidden h-10 items-center justify-center rounded-full bg-[var(--primary-color)] px-5 text-sm font-semibold text-white transition hover:brightness-110 md:flex"
       >
         Descargar CV
@@ -70,7 +70,7 @@ export default function Header() {
           {navItems.map((item) => (
             <Link
               key={item.label}
-              href={withBasePath(item.href)}
+              href={item.href}
               onClick={() => setMenuOpen(false)}
               className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)]"
             >
@@ -78,7 +78,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href={withBasePath('/cv.pdf')}
+            href="/cv.pdf"
             onClick={() => setMenuOpen(false)}
             className="mt-2 w-full rounded-full bg-[var(--primary-color)] px-4 py-2 text-center text-sm font-semibold text-white"
           >
