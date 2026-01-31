@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { technologies } from '@/lib/data'
+import { withBasePath } from '@/lib/paths'
 import SectionHeader from './SectionHeader'
 
 export default function StackSection() {
@@ -16,15 +17,15 @@ export default function StackSection() {
               <div className="flex items-center gap-3">
                 {tech.logo ? (
                   <Image
-                    src={tech?.logo}
-                    alt={`${tech?.name} logo`}
+                    src={withBasePath(tech.logo)}
+                    alt={`${tech.name} logo`}
                     width={24}
                     height={24}
                     className="h-6 w-6"
                   />
                 ) : (
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[10px] font-semibold text-[var(--text-primary)]">
-                    {tech.name.slice(0, 2).toUpperCase()}
+                    {(tech.short ?? tech.name.slice(0, 2)).toUpperCase()}
                   </div>
                 )}
                 <span>{tech.name}</span>

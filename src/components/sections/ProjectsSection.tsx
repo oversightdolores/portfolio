@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { projects } from '@/lib/data'
+import { withBasePath } from '@/lib/paths'
 import SectionHeader from './SectionHeader'
 
 export default function ProjectsSection() {
@@ -22,7 +23,7 @@ export default function ProjectsSection() {
                         className="relative h-full overflow-hidden rounded-2xl"
                       >
                         <Image
-                          src={image}
+                          src={withBasePath(image)}
                           alt={`Mockup ${index + 1} de ${project.title}`}
                           fill
                           sizes="(min-width: 1024px) 25vw, 50vw"
@@ -33,7 +34,7 @@ export default function ProjectsSection() {
                   </div>
                 ) : (
                   <Image
-                    src={project.images[0]}
+                    src={withBasePath(project.images[0])}
                     alt={`Mockup de ${project.title}`}
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"

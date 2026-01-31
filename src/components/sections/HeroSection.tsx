@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { links, profile } from '@/lib/data'
+import { withBasePath } from '@/lib/paths'
 
 const highlights = [
   'Productos en producción',
@@ -131,7 +132,7 @@ export default function HeroSection() {
               <div className="pointer-events-none absolute -top-10 right-6 h-32 w-32 rounded-full bg-sky-400/30 blur-2xl" />
               <div className="pointer-events-none absolute -bottom-12 left-4 h-40 w-40 rounded-full bg-indigo-500/20 blur-2xl" />
               <Image
-                src={profile.photo}
+                src={withBasePath(profile.photo)}
                 alt={profile.photoAlt ?? profile.name}
                 width={520}
                 height={700}
