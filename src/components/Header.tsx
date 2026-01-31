@@ -3,25 +3,40 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+const navItems = [
+  { label: 'Inicio', href: '/#inicio' },
+  { label: 'Sobre mí', href: '/#sobre-mi' },
+  { label: 'Proyectos', href: '/#proyectos' },
+  { label: 'Stack', href: '/#stack' },
+  { label: 'Experiencia', href: '/#experiencia' },
+  { label: 'Servicios', href: '/#servicios' },
+ /*  { label: 'Testimonios', href: '/#testimonios' }, */
+  { label: 'Contacto', href: '/#contacto' },
+]
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="flex w-full items-center justify-between border-b border-[var(--border-color)] px-6 md:px-10 py-4 fixed top-0 left-0 right-0 bg-[var(--background-color)] bg-opacity-80 backdrop-blur-sm z-20">
-      <div className="flex items-center gap-3">
-        <svg className="size-6 text-[var(--accent-color)]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l6-5-6-5v10z" />
-        </svg>
-        <h2 className="text-xl font-bold tracking-tighter">NicolásDev</h2>
-      </div>
+    <header className="fixed left-0 right-0 top-0 z-20 flex w-full items-center justify-between border-b border-[var(--border-color)] bg-[var(--background-color)]/80 px-6 py-4 backdrop-blur-sm md:px-10">
+      <Link href="/#inicio" className="flex items-center gap-3">
+        <img
+          src="/logos/icon.svg"
+          alt="Logo NL"
+          className="h-18 w-18"
+          loading="eager"  
+        />
+        <h2 className="text-base font-semibold tracking-tight text-[var(--text-primary)] sm:text-lg">
+          Nicolás Lo Giudice
+        </h2>
+      </Link>
 
-      {/* Botón hamburguesa mobile */}
       <button
         className="md:hidden text-[var(--primary-text-color)] focus:outline-none"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle Menu"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           {menuOpen ? (
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           ) : (
@@ -30,31 +45,44 @@ export default function Header() {
         </svg>
       </button>
 
-      {/* Navegación desktop */}
-      <nav className="hidden md:flex items-center gap-8">
-        <Link href="/" className="text-[var(--secondary-text-color)] hover:text-[var(--primary-text-color)] text-sm font-medium">Inicio</Link>
-        <Link href="/projects" className="text-[var(--secondary-text-color)] hover:text-[var(--primary-text-color)] text-sm font-medium">Proyectos</Link>
-        <Link href="/about" className="text-[var(--primary-text-color)] text-sm font-bold">Sobre Mí</Link>
-        <Link href="/contact" className="text-[var(--secondary-text-color)] hover:text-[var(--primary-text-color)] text-sm font-medium">Contacto</Link>
-        <Link href="/technologies" className="text-[var(--secondary-text-color)] hover:text-[var(--primary-text-color)] text-sm font-medium">Tecnologías</Link>
+      <nav className="hidden items-center gap-6 md:flex">
+        {navItems.map((item) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            className="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--primary-color)]"
+          >
+            {item.label}
+          </Link>
+        ))}
       </nav>
 
-      {/* Botón CV desktop */}
-      <button className="hidden md:flex ml-4 items-center justify-center rounded-lg h-10 px-5 bg-[var(--accent-color)] text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+      <Link
+        href="/cv.pdf"
+        className="hidden h-10 items-center justify-center rounded-full bg-[var(--primary-color)] px-5 text-sm font-semibold text-white transition hover:brightness-110 md:flex"
+      >
         Descargar CV
-      </button>
+      </Link>
 
-      {/* Menú mobile */}
       {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[var(--background-color)] shadow-md md:hidden flex flex-col items-start px-6 py-4 space-y-4 z-10">
-          <Link href="/" className="text-[var(--secondary-text-color)] hover:text-[var(--primary-text-color)] text-sm font-medium">Inicio</Link>
-          <Link href="/projects" className="text-[var(--secondary-text-color)] hover:text-[var(--primary-text-color)] text-sm font-medium">Proyectos</Link>
-          <Link href="/about" className="text-[var(--primary-text-color)] text-sm font-bold">Sobre Mí</Link>
-          <Link href="/contact" className="text-[var(--secondary-text-color)] hover:text-[var(--primary-text-color)] text-sm font-medium">Contacto</Link>
-          <Link href="/technologies" className="text-[var(--secondary-text-color)] hover:text-[var(--primary-text-color)] text-sm font-medium">Tecnologías</Link>
-          <button className="w-full text-left mt-4 px-4 py-2 rounded bg-[var(--accent-color)] text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+        <div className="absolute left-0 top-full z-10 flex w-full flex-col items-start space-y-4 bg-[var(--background-color)] px-6 py-4 shadow-md md:hidden">
+          {navItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              onClick={() => setMenuOpen(false)}
+              className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--primary-color)]"
+            >
+              {item.label}
+            </Link>
+          ))}
+          <Link
+            href="/cv.pdf"
+            onClick={() => setMenuOpen(false)}
+            className="mt-2 w-full rounded-full bg-[var(--primary-color)] px-4 py-2 text-center text-sm font-semibold text-white"
+          >
             Descargar CV
-          </button>
+          </Link>
         </div>
       )}
     </header>

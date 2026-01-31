@@ -1,8 +1,18 @@
 export default function BlogPage() {
   return (
-    <section className="space-y-6 py-10">
-      <h2 className="text-4xl font-bold mb-4">Blog</h2>
-      <p>Coming soon...</p>
-    </section>
+    <main className="bg-[var(--background-color)] text-[var(--text-primary)]">
+      <section className="mx-auto w-full max-w-5xl px-6 pb-20 pt-28">
+        <p className="text-xs uppercase tracking-[0.3em] text-[var(--text-muted)]">
+          Blog
+        </p>
+        <h1 className="mt-4 text-3xl font-semibold font-display">
+          Ideas y notas de arquitectura
+        </h1>
+        <p className="mt-4 text-[var(--text-secondary)]">
+          Próximamente. Estoy preparando contenido sobre desarrollo, producto e
+          infraestructura.
+        </p>
+      </section>
+    </main>
   )
 }
