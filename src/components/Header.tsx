@@ -31,7 +31,7 @@ export default function Header() {
           Nicolás Lo Giudice
         </h2>
       </Link>
-
+ 
       <button
         className="md:hidden text-[var(--primary-text-color)] focus:outline-none"
         onClick={() => setMenuOpen(!menuOpen)}
