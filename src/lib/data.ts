@@ -5,9 +5,14 @@ export const profile = {
   photo: '/profile1.png',
   photoAlt: 'Foto de Nicolás Lo Giudice',
   heroSummary:
-    'Creo productos digitales escalables en web y mobile con foco en tiempo real, seguridad y visión de negocio.',
-  bio: 'Desarrollador full-stack y emprendedor tecnológico con foco en crear productos digitales reales, escalables y en producción. Experiencia en aplicaciones web y mobile, APIs modernas, sistemas en tiempo real, automatización e infraestructura. Trabajo tanto en productos propios como en soluciones IT para empresas y sector público, priorizando estabilidad, seguridad y visión de negocio.',
+    'Construyo apps web y mobile listas para producción: rápidas, seguras y pensadas para negocios reales.',
+  bio: 'Desarrollador full-stack y emprendedor tecnológico. Diseño, desarrollo y despliego productos digitales en producción: aplicaciones web y mobile, APIs modernas, sistemas en tiempo real, automatización e infraestructura. Trabajo con productos propios, empresas y sector público, priorizando estabilidad, seguridad y resultados de negocio.',
   cta: 'Hablemos de tu proyecto · Desarrollo · Software · IT · Consultoría',
+  proofPoints: [
+    { value: '5+', label: 'productos reales' },
+    { value: 'Web + Mobile', label: 'entrega end-to-end' },
+    { value: '24/7', label: 'criterio operativo' },
+  ],
   languages: [
     { name: 'Español', level: 'Nativo' },
     { name: 'Inglés', level: 'Técnico / Intermedio-Avanzado' },
@@ -24,9 +29,10 @@ export const links = {
 
 export const projects = [
   {
-    title: 'Farma Dolores',
+    title: 'BenFarma',
     description:
-      'Aplicación móvil para la ciudad de Dolores enfocada en mostrar qué farmacia está de turno, con datos de farmacias, ubicación, números de servicios de emergencia y un listado de primeros auxilios.',
+      'De app local a plataforma para farmacias: turnos, geolocalización, contacto rápido, servicios de emergencia y primeros auxilios. Producto publicado y preparado para crecer con nueva identidad.',
+    impact: ['Producto en producción', 'Web pública + app mobile', 'Información crítica y geolocalizada'],
     stack: [
       'React Native',
       'TypeScript',
@@ -36,6 +42,7 @@ export const projects = [
       'Geolocalización',
     ],
     links: [
+      { label: 'Web', href: 'https://benfarma.com/' },
       {
         label: 'Google Play',
         href: 'https://play.google.com/store/apps/details?id=com.overcode.farmadolores',
@@ -44,9 +51,19 @@ export const projects = [
     images: ['/projects/farmadolores-1.png', '/projects/farmadolores-2.png'],
   },
   {
+    title: 'Diseño Integral',
+    description:
+      'Landing institucional para convertir visitas en consultas: servicios claros, identidad visual cuidada, estructura responsive y publicación en GitHub Pages.',
+    impact: ['Landing publicada', 'Diseño responsive', 'Enfoque en captación de clientes'],
+    stack: ['HTML', 'CSS', 'JavaScript', 'Responsive Design', 'GitHub Pages'],
+    links: [{ label: 'Web', href: 'https://crazedev04.github.io/disenioIntegral/' }],
+    images: ['/projects/disenioIntegral.png'],
+  },
+  {
     title: 'La Hoguera',
     description:
-      'Aplicación mobile de audio-confesiones en tiempo real con salas en vivo, autenticación segura y moderación. Arquitectura orientada a escalabilidad, baja latencia y tiempo real.',
+      'Red social mobile de audio en vivo con salas, autenticación, moderación y arquitectura de baja latencia. Backend preparado para escalar en tiempo real.',
+    impact: ['Audio en vivo', 'Arquitectura realtime', 'Moderación y seguridad'],
     stack: [
       'React Native',
       'GraphQL Yoga',
@@ -69,7 +86,8 @@ export const projects = [
   {
     title: 'TIEMPO',
     description:
-      'Web app viral que calcula el costo en tiempo de vida de hábitos y consumos. Enfoque narrativo y emocional, con resultados shareables y uso de IA para generar copy de impacto.',
+      'Web app viral que transforma consumos cotidianos en tiempo de vida. Combina narrativa emocional, resultados compartibles e IA para generar copy de impacto.',
+    impact: ['Concepto viral', 'Resultados shareables', 'Copy con IA'],
     stack: ['Next.js 16', 'Node.js', 'GraphQL', 'AI (OpenAI / Gemini)', 'Vercel'],
     links: [{ label: 'Web', href: 'https://xtiempo.com' }],
     images: ['/projects/tiempo.webp'],
@@ -77,7 +95,8 @@ export const projects = [
    {
     title: 'Farty Adventure',
     description:
-      'Juego mobile 2D estilo endless runner con mecánicas humorísticas, generación procedural y enfoque casual.',
+      'Juego mobile 2D estilo endless runner con mecánicas humorísticas, generación procedural y loop casual pensado para sesiones cortas.',
+    impact: ['Mobile game', 'Generación procedural', 'Loop casual'],
     stack: ['Unity', 'C#', 'Mobile Game Development'],
     links: [{ label: 'Google Play (pronto)', href: '#' }],
     images: ['/projects/farty.png'],
@@ -85,7 +104,8 @@ export const projects = [
   {
     title: 'Aguateros',
     description:
-      'Plataforma tipo SaaS + marketplace para gestión de distribución de agua: pedidos, repartidores, clientes, suscripciones y control operativo.',
+      'SaaS + marketplace para operar distribución de agua: pedidos, repartidores, clientes, suscripciones y control administrativo desde una sola plataforma.',
+    impact: ['SaaS operativo', 'Marketplace', 'Gestión logística'],
     stack: [
       'Next.js',
       'GraphQL Yoga',
@@ -100,7 +120,8 @@ export const projects = [
   {
     title: 'Bits One',
     description:
-      'Marca digital y e-commerce de electrónica, gadgets y productos impresos en 3D. Gestión integral de producto, precios, marketing y automatización.',
+      'Marca digital y e-commerce de electrónica, gadgets y productos impresos en 3D. Gestión integral de catálogo, precios, marketing y automatización.',
+    impact: ['E-commerce', 'Marketing digital', 'Automatización comercial'],
     stack: ['E-commerce', 'Marketing digital', 'Automatización'],
     links: [{ label: 'Instagram', href: 'https://www.instagram.com/b1tsone/' }],
     images: ['/projects/bitsone.svg'],

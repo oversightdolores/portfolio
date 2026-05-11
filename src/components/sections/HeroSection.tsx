@@ -62,17 +62,34 @@ export default function HeroSection() {
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a
-              href="#contacto"
+              href={links.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-[var(--primary-color)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
             >
-              Hablemos de tu proyecto
+              Hablemos por WhatsApp
             </a>
             <a
               href="#proyectos"
               className="inline-flex items-center justify-center rounded-full border border-[var(--border-color)] px-6 py-3 text-sm font-semibold text-[var(--text-primary)] transition hover:border-[var(--primary-color)] hover:text-[var(--primary-color)]"
             >
-              Ver proyectos
+              Ver casos reales
             </a>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {profile.proofPoints.map((point) => (
+              <div
+                key={point.label}
+                className="rounded-2xl border border-[var(--border-color)] bg-[var(--card-background-color)] px-4 py-3"
+              >
+                <p className="text-sm font-semibold text-[var(--text-primary)]">
+                  {point.value}
+                </p>
+                <p className="mt-1 text-xs text-[var(--text-secondary)]">
+                  {point.label}
+                </p>
+              </div>
+            ))}
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-[var(--text-secondary)]">
             <a
@@ -116,12 +133,10 @@ export default function HeroSection() {
               Email directo
             </a>
             <a
-              href={links.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/cv.pdf"
               className="inline-flex items-center justify-center rounded-full bg-[var(--primary-color)] px-5 py-2 text-sm font-semibold text-white transition hover:brightness-110"
             >
-              WhatsApp
+              Descargar CV
             </a>
           </div>
         </div>

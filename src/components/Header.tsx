@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { withBasePath } from '@/lib/paths'
@@ -21,11 +22,13 @@ export default function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-20 flex w-full items-center justify-between border-b border-[var(--border-color)] bg-[var(--background-color)]/80 px-6 py-4 backdrop-blur-sm md:px-10">
       <Link href="/#inicio" className="flex items-center gap-3">
-        <img
+        <Image
           src={withBasePath('/logos/icon.svg')}
           alt="Logo NL"
+          width={72}
+          height={72}
           className="h-18 w-18"
-          loading="eager"  
+          priority
         />
         <h2 className="text-base font-semibold tracking-tight text-[var(--text-primary)] sm:text-lg">
           Nicolás Lo Giudice
