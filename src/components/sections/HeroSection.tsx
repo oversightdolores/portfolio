@@ -133,7 +133,7 @@ export default function HeroSection() {
               Email directo
             </a>
             <a
-              href="/cv.pdf"
+              href="/cv-nicolas-lo-giudice-full-stack-developer.pdf"
               className="inline-flex items-center justify-center rounded-full bg-[var(--primary-color)] px-5 py-2 text-sm font-semibold text-white transition hover:brightness-110"
             >
               Descargar CV

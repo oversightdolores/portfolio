@@ -62,7 +62,7 @@ export default function Header() {
       </nav>
 
       <Link
-        href="/cv.pdf"
+        href="/cv-nicolas-lo-giudice-full-stack-developer.pdf"
         className="hidden h-10 items-center justify-center rounded-full bg-[var(--primary-color)] px-5 text-sm font-semibold text-white transition hover:brightness-110 md:flex"
       >
         Descargar CV
@@ -81,7 +81,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="/cv.pdf"
+            href="/cv-nicolas-lo-giudice-full-stack-developer.pdf"
             onClick={() => setMenuOpen(false)}
             className="mt-2 w-full rounded-full bg-[var(--primary-color)] px-4 py-2 text-center text-sm font-semibold text-white"
           >
